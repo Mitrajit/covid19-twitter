@@ -1,4 +1,4 @@
-name: COVID19 date data on Twitter
+name: COVID19 data update on Twitter
 
 on:
   schedule:
