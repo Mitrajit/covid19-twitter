@@ -15,4 +15,4 @@ api.update_status("".join(["🦠 COVID tracker bot • India🤖\n","😷 Active
 covid19api.recoverypercent,"\n😖 Fatality rate: ",covid19api.fatalitypercent,"\n💉 Vaccination rate: ",
 covid19api.vaccinatedpercent,"\n📈 Today ",covid19api.today_inc if int(covid19api.today_inc) < 0 else "+"+
 covid19api.today_inc,"\n📈 Yesterday ",covid19api.yesterday_inc if int(covid19api.yesterday_inc)<0 else "+"
-+covid19api.yesterday_inc,"\nLast update ",covid19api.last_update,"#IndiaFightsCOVID19 #COVIDEmergency #CovidTracker"]))
++covid19api.yesterday_inc,"\nLast update ",covid19api.last_update,"\n#IndiaFightsCOVID19 #COVIDEmergency #CovidTracker"]))
