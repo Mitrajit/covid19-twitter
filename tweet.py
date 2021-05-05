@@ -1,5 +1,5 @@
-import sys
-import encryptdecrypt38
+import sys, os
+# import encryptdecrypt38
 import covid19api
 try:
     import tweepy, geocoder, argparse
@@ -48,9 +48,9 @@ try :
     # if args.api is not None:
     #     encryptdecrypt38.encrypt([args.api[0],args.api[1],args.api[2],args.api[3]])
     #     print('API, tokens keys and secrets are saved')
-    cred=encryptdecrypt38.decrypt()
-    auth = tweepy.OAuthHandler(cred[0], cred[1])
-    auth.set_access_token(cred[2], cred[3])
+    # cred=encryptdecrypt38.decrypt()
+    auth = tweepy.OAuthHandler(os.getenv("API_KEY"), os.getenv("SECRET_KEY"))
+    auth.set_access_token(os.getenv("ACCESS_TOKEN_KEY"), os.getenv("ACCESS_TOKEN_SECRET"))
     print("OAuthHandler set")
     api = tweepy.API(auth)
     print("logged in as @"+api.me().screen_name)
