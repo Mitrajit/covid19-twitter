@@ -1,13 +1,7 @@
 import sys, os
 # import encryptdecrypt38
 import covid19api
-try:
-    import tweepy, geocoder, argparse
-    from playsound import playsound
-    from tabulate import tabulate
-except ModuleNotFoundError :
-    print("Libraries could not be imported\nUse \"pip install -r requirements.txt\"")
-    sys.exit(0)
+import tweepy
 # def delete_tweet() :
 #     tweet = api.user_timeline(count = 1)[0]
 #     print("Are you sure you want to delete this tweet(Y/N):\n",tweet.text.lstrip())
@@ -44,19 +38,15 @@ except ModuleNotFoundError :
 # if len(args.tweet[0])==0 and args.api is None and not args.d and args.tr is None:
 #     my_parser.print_help()
 #     sys.exit(0)
-try :
-    # if args.api is not None:
-    #     encryptdecrypt38.encrypt([args.api[0],args.api[1],args.api[2],args.api[3]])
-    #     print('API, tokens keys and secrets are saved')
-    # cred=encryptdecrypt38.decrypt()
-    auth = tweepy.OAuthHandler(os.getenv("API_KEY"), os.getenv("SECRET_KEY"))
-    auth.set_access_token(os.getenv("ACCESS_TOKEN_KEY"), os.getenv("ACCESS_TOKEN_SECRET"))
-    print("OAuthHandler set")
-    api = tweepy.API(auth)
-    print("logged in as @"+api.me().screen_name)
-except tweepy.error.TweepError as tp:
-    print("Could not log in with the given credentials\n",tp)
-    sys.exit(0)
+# if args.api is not None:
+#     encryptdecrypt38.encrypt([args.api[0],args.api[1],args.api[2],args.api[3]])
+#     print('API, tokens keys and secrets are saved')
+# cred=encryptdecrypt38.decrypt()
+auth = tweepy.OAuthHandler(os.getenv("API_KEY"), os.getenv("SECRET_KEY"))
+auth.set_access_token(os.getenv("ACCESS_TOKEN_KEY"), os.getenv("ACCESS_TOKEN_SECRET"))
+print("OAuthHandler set")
+api = tweepy.API(auth)
+print("logged in as @"+api.me().screen_name)
 # except IndexError:
 #     my_parser.print_help()
 #     sys.exit(0)
