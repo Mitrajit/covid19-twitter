@@ -33,7 +33,8 @@ try:
     active = str(js['TT']['total']['confirmed']-js['TT']['total']['recovered']-js['TT']['total']['deceased']-js['TT']['total']['other'])
     recoverypercent = "{:.2f}%".format(round(js['TT']['total']['recovered']/js['TT']['total']['confirmed']*100,2))
     fatalitypercent = "{:.2f}%".format(round(js['TT']['total']['deceased']/js['TT']['total']['confirmed']*100,2))
-    vaccinatedpercent = "{:.2f}%".format(round(js['TT']['total']['vaccinated']/js['TT']['meta']['population']*100,2))
+    vaccinateddose1percent = "{:.2f}%".format(round(js['TT']['total']['vaccinated1']/js['TT']['meta']['population']*100,2))
+    vaccinateddose2percent = "{:.2f}%".format(round(js['TT']['total']['vaccinated2']/js['TT']['meta']['population']*100,2))
     updatetime = datetime.datetime.strptime(js['TT']['meta']['last_updated'], "%Y-%m-%dT%H:%M:%S+05:30")
     last_update = updatetime.strftime('%b-%d-%y %I:%M%p')
 except:
@@ -42,7 +43,7 @@ if not js or 'TT' not in js:
     print('==== Failure To Retrieve ====')
     sys.exit()
 
-print("Active:",active,"\nRecovery %",recoverypercent,"\nFarality",fatalitypercent,"\nVaccinated %",vaccinatedpercent)
+print("Active:",active,"\nRecovery %",recoverypercent,"\nFarality",fatalitypercent,"\nVaccinated %",vaccinateddose1percent,vaccinateddose2percent)
 print("Today",today_inc if int(today_inc) < 0 else "+"+today_inc)
 print("Yesterday",yesterday_inc if int(yesterday_inc)<0 else "+"+yesterday_inc)
 print("Last update",last_update)
