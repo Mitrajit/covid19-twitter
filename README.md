@@ -1,4 +1,4 @@
-# COVID tracker bot • India
+# COVID tracker bot • India  <img src="https://github.com/Mitrajit/covid19-twitter/actions/workflows/update_twitter.yml/badge.svg" alt="Bot running badge" align="right"/>
 ## How I made it?
  - [covid19india](https://github.com/covid19india) is generous enough to provide the api to access this [JSON](https://api.covid19india.org/v4/data.json) file
  - Tweepy is imported in python to send twitter api requests for updating status and deleting past tweet
